@@ -36,7 +36,7 @@ export const BudgetsProvider = ({ children }) => {
     }
 
     function deleteBudget({ id }) {
-        //deal with
+    
         setBudgets(previousBudgets => {
             return previousBudgets.filter(budget => budget.id !== id)
         })

@@ -3,14 +3,16 @@ import { useRef } from "react";
 import { GENERAL_BUDGET_ID, useBudgets } from "../contexts/BudgetContext";
 
 export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
+    
     const descriptionRef = useRef()
     const amountRef = useRef()
     const budgetIdRef = useRef()
-    const {addExpense, budgets} = useBudgets()
+    const { addExpense, budgets } = useBudgets()
+    
     function handleSubmit(e) {
         e.preventDefault()
         addExpense({
-            descriptionRef: descriptionRef.current.value,
+            description: descriptionRef.current.value,
             amount: parseFloat(amountRef.current.value),
             budgetId: budgetIdRef.current.value,
         })
